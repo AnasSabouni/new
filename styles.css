@@ -18,6 +18,7 @@ nav ul {
     display: flex;
     justify-content: space-around ;
     font-size: 25px;
+    margin-top: 5PX;
     
     
 }
