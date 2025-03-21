@@ -80,6 +80,9 @@ nav ul li a {
     border-radius: 5px;
 }
 @media (max-width: 768px) {
+    body {
+        background-image: url(img/pngtree-modern-technology-dark-space-image_27360.jpg);
+    }
     nav ul {
         align-items: center;
         font-size: 10px;
