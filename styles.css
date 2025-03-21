@@ -19,8 +19,7 @@ nav ul {
     justify-content: space-around ;
     font-size: 25px;
     margin-top: 5PX;
-    
-    
+    text-transform: capitalize;
 }
 
 nav ul li a {
@@ -67,4 +66,57 @@ nav ul li a {
 
 .cta:hover {
     background-color: #0056b3;
+}
+.site {
+    margin-left: 20px;
+    list-style-type: none;
+    margin-left: 90px;
+    margin-top: 100px;
+}
+.site img{
+    max-width: 50px;
+    max-height: 50px;
+    padding: 20px;
+    border-radius: 5px;
+}
+@media (max-width: 768px) {
+    nav ul {
+        align-items: center;
+        font-size: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+    .hero{
+        padding-left: 0px;
+    }
+    .hero h1 {
+        font-size: 24px;
+        margin-left: 0px;
+        text-align: center;
+    }
+
+    .hero h2 {
+        font-size: 18px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .cta {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .site {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .site img {
+        width: 30px;
+        height: 30px;
+    }
 }
