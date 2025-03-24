@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة الويب</title>
+    <style>
+        body {
+            background-image: url(img/dp-big-portfolio-021.png);
+        }
+        footer {
+            padding: 20px;
+            text-align: center;
+        }
+        .contact-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- محتوى الصفحة -->
+    <div>
+        <h1>مرحبًا بكم في موقعنا</h1>
+        <p>هذا محتوى صفحة الويب.</p>
+    </div>
+
+    <!-- قسم الاتصال بنا -->
+    <footer>
+        <div class="contact-form">
+            <h2>تواصل معنا</h2>
+            <form action="send_message.php" method="POST">
+                <input type="text" name="name" placeholder="اسمك" required>
+                <input type="email" name="email" placeholder="بريدك الإلكتروني" required>
+                <textarea name="message" rows="5" placeholder="رسالتك" required></textarea>
+                <button type="submit">إرسال</button>
+            </form>
+        </div>
+    </footer>
+
+</body>
+</html>
