@@ -11,7 +11,7 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background-color: #6a1b8f;
+      background-color: #3638be;
       background-size: cover;
       height: 100vh;
       display: flex;
@@ -19,7 +19,7 @@
       align-items: center;
     }
     .con h1{
-      background-color: #371247;
+      background-color: #1a0f5a;
       position: relative;
       color: #fff;
       text-align: center;
@@ -27,7 +27,7 @@
       bottom: 400px;
       border-bottom: 2px dotted #fff ;
       line-height: 120px;
-      width: 435%;
+      width: 697%;
       margin-left: 10px;
         
     }
@@ -38,6 +38,7 @@
       color: #ddd;
       bottom: 200px;
       width: 400px;
+      left: 50px;
     }
 
     /* طبقة التعتيم لتحسين وضوح النموذج */
@@ -54,10 +55,11 @@
     /* حاوية النموذج */
     .container {
       position: relative;
+      text-align: right;
       filter: blur(5px) grayscale(8px) brightness(4px);
       padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      border-radius: 50px;
+      box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.473);
       width: 300%;
       top: 150px;
       margin-left: -410px;
@@ -82,6 +84,7 @@
     input,
     textarea {
       width: 100%;
+      text-align: right;
       padding: 12px;
       border: 1px solid #ddd;
       border-radius: 5px;
@@ -117,22 +120,27 @@
     }
     .num ul{
       position: relative;
+      border-radius: 50px;
+      box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.473);
+      filter: blur(5px) grayscale(8px) brightness(4px);
       list-style-type: circle;
       border-bottom: 5px solid rgb(255, 255, 255);
       padding: 10px;
-      width: 140%;
+      width: 160%;
+      height: 400px;
+      top: 50px;
     }
     .im1 img{
       position: relative;
-      max-width: 50%;
-      max-height: 50%;
-      right: 160px;
+      max-width: 55%;
+      max-height: 55%;
+      right: 140px;
     }
     .im2 img{
       position: relative;
-      max-width: 25%;
-      max-height: 25%;
-      right: 210px;
+      max-width: 35%;
+      max-height: 35%;
+      right: 180px;
       top: 100px;
     }
     .im3 img{
@@ -140,7 +148,7 @@
       max-width: 30%;
       max-height: 30%;
       top: 200px;
-      right: 300px;
+      right: 250px;
     }
     .imo img{
       position: relative;
@@ -166,9 +174,9 @@
   </style>
 </head>
 <body>
-  <div class="con"><h1>Maintenance</h1></div>
+  <div class="con"><h1>Contact US</h1></div>
   <div class="about">
-    <h3>شارك معنا مشكلتك الفنة لنقوم بمساعدتك في أقرب وقت ممكن 🤍</h3>
+    <h3>شاركنا ارائك فيما يتعلق بنا أواذا كان لديك أي استفسار اكتبه في الأسفل 🤍</h3>
   </div>
   <div class="overlay"></div>
   <div class="container">
@@ -177,11 +185,11 @@
           <label for="name">الاسم:</label>
           <input type="text" id="name" name="name" placeholder="أدخل اسمك" required>
       
-          <label for="email">البريد الإلكتروني:</label>
-          <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+          <label for="email">رقم الهاتف :</label>
+          <input type="email" id="email" name="email" placeholder="أدخل رقم الهاتف" required>
       
-          <label for="message">المشكلة الفنية:</label>
-          <textarea id="message" name="message" rows="5" placeholder="أشرح المشكلة الفنية" required></textarea>
+          <label for="message">رأيك أو استفسارك :</label>
+          <textarea id="message" name="message" rows="5" placeholder="أشرح لنا رأيك أو استفسارك" required></textarea>
       
           <button type="submit">إرسال</button>
       </form>
@@ -203,13 +211,13 @@
     <img src="img3/[CITYPNG.COM]E-mail Mail Letter White Logo Icon Transparent Background - 1000x1000.png" alt="">
   </div>
   <div class="imo">
-    <img src="img3/pngwing.com.png" alt="">
+    <a href="https://www.facebook.com/share/14DeYaX1xEf/"><img src="img3/pngwing.com.png" alt=""></a>
   </div>
   <div class="imt">
-    <img src="img3/PngItem_5221492.png" alt="">
+    <a href="https://wa.me/qr/NGSOMEA3A7WJF1"><img src="img3/PngItem_5221492.png" alt=""></a>
   </div>
   <div class="imth">
-    <img src="img3/toppng.com-black-and-white-insta-logo-1455x1454.png" alt="">
+    <a href="https://www.instagram.com/doclaptop?utm_source=qr&igsh=eGJpYzQ0aXU2M25t"><img src="img3/toppng.com-black-and-white-insta-logo-1455x1454.png" alt=""></a>
   </div>
   <script>
     // عند تقديم النموذج نتفاد إعادة تحميل الصفحة ونرسل الرسالة عبر emailjs
