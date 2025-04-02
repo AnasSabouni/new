@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض المنتج - أمازون</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            direction: rtl; /* التوجيه من اليمين لليسار */
+        }
+        .container {
+            position: relative;
+            width: 80%;
+            height: 600px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-between; /* توزيع المسافة بين الصور والمواصفات */
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .product-image {
+            position: relative;
+            direction: ltr;
+            width: 300px;
+            right: 1200px;
+            top: 50px;
+        
+        }
+        .product-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .zoomed {
+            position: absolute;
+            left: 320px;
+            top: 0;
+            width: 500px;
+            height: 500px;
+            border: 1px solid #ccc;
+            display: none;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            background-size: 300%;
+            z-index: 10; /* جعل الزوم فوق العناصر الأخرى */
+        }
+        .thumbnail-container {
+            display: flex;
+            margin-top: 10px;
+        }
+        .thumbnail {
+            width: 60px;
+            height: auto;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        .product-details {
+            margin-right: 20px; /* تغيير الاتجاه لليمين */
+            width: 60%; /* تحديد عرض المواصفات */
+        }
+        .product-title {
+            position: relative;
+            font-size: 24px;
+            font-weight: bold;
+            left: 500px;
+            top: 20px;
+        }
+        .price {
+            position: relative;
+            font-size: 30px;
+            color: #b12704;
+            margin: 10px 0;
+            display: inline-block;
+            left: 570px;
+            top: 420px;
+            
+        }
+        .zoom-info {
+            position: relative;
+            font-size: 16px;
+            color: #555;
+            display: inline-block;
+            margin-right: 10px;
+            right: 570px;
+            bottom: 420px;
+        }
+        .rating {
+            position: relative;
+            color: gold;
+            font-size: 30px;
+            left: 580px;
+            top: 420px;
+        }
+        .description {
+            position: relative;
+            margin: 10px 0;
+            color: #555;
+            left: 600px;
+        }
+        .buy-button {
+            position: relative;
+            background: #ff9900;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            left: 575px;
+            top: 20px;
+        }
+        .suggested-products {
+            position: relative;
+            margin-top: 30px;
+            height: 150px;
+        }
+        .suggested-products h3 {
+            margin-bottom: 10px;
+        }
+        .suggested-container {
+            display: flex;
+        }
+        .suggested-item {
+            width: 150px;
+            margin: 0 15px; /* زيادة المسافة بين العناصر */
+            text-align: center;
+        }
+        .suggested-item img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .social-bar {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .social-bar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="product-image">
+            <img id="mainImage" src="img5/IMG_20250402_141438_095.jpg" alt="صورة المنتج" onmousemove="zoom(event)" onmouseleave="hideZoom()">
+            <div class="zoomed" id="zoomed"></div>
+            <div class="thumbnail-container">
+                <img class="thumbnail" src="img5/IMG_20250402_141438_095.jpg" onclick="changeImage(this)">
+                <img class="thumbnail" src="img5/IMG_20250402_141437_736.jpg" onclick="changeImage(this)">
+                <img class="thumbnail" src="img5/IMG_20250402_141437_273.jpg" onclick="changeImage(this)">
+            </div>
+        </div>
+        <div class="product-details">
+            <div class="product-title">Dell XPS 9560 4K</div>
+            <div class="rating">★★★★★</div>
+            <div class="price">
+                $479.99
+                <span class="zoom-info">اضغط على الصورة و ضع المؤشر على الصورة على اليمين للتكبير</span>
+            </div>
+            <div class="description"><br>🚀 <strong>المعالج:</strong> Ryzen 7 4800H - 16 نواة (CPUs) بسرعة 2.9GHz | أداء فائق السرعة لتعدد المهام وفتح التطبيقات بكفاءة عالية.</br>
+
+                <br>🎮 <strong>كرت الشاشة:</strong> AMD RADEON RX5600 - 6GB | تجربة رسومات مذهلة وسلسة للألعاب والبرامج الثقيلة.</br>
+            
+                <br>⚡ <strong>الهارد:</strong> 256GB SSD NVMe | سرعة تحميل استثنائية، واستجابة فورية لجميع العمليات.</br>
+            
+                <br>🧠 <strong>الرام:</strong> 16GB DDR4 | استمتع بأداء فائق لتعدد المهام بدون تقطيع أو تأخير.</br>
+            
+                <br>📺 <strong>الشاشة:</strong> 15.6 إنش FHD بتردد 144HZ | تجربة بصرية مذهلة مع تردد مرتفع لألعاب <br>لأكثر سلاسة ووضوح    </br>.</br>
+            
+                <br>🎨 <strong>إنارة الكيبورد:</strong> RGB | إضاءة قابلة للتخصيص تضيف لمسة جمالية مع كل لمسة.</br></div>
+            <a href="#" class="buy-button">أضف إلى السلة</a>
+        </div>
+    </div>
+    <div class="container suggested-products">
+        <h3>منتجات مقترحة</h3>
+        <div class="suggested-container">
+            <div class="suggested-item">
+                <img src="img5/IMG_20250402_132652_611.jpg" alt="منتج مقترح 1">
+                <p>HP Pavilion</p>
+            </div>
+            <div class="suggested-item">
+                <img src="img5/IMG_20250402_132653_054.jpg" alt="منتج مقترح 2">
+                <p>HP Victus</p>
+            </div>
+            <div class="suggested-item">
+                <img src="img5/IMG_20250402_134212_921.jpg" alt="منتج مقترح 3">
+                <p>Samsung</p>
+            </div>
+            <div class="suggested-item">
+                <img src="img5/IMG_20250402_141306_467.jpg" alt="منتج مقترح 1">
+                <p>Lenovo Thinkpad p1 Gen4</p>
+            </div>
+            <div class="suggested-item">
+                <img src="img5/IMG_20250402_141438_095.jpg" alt="منتج مقترح 2">
+                <p>Dell gaming G5s</p>
+            </div>
+            <div class="suggested-item">
+                <img src="img5/IMG_20250402_141437_950.jpg" alt="منتج مقترح 3">
+                <p>Dell Latitude 5500</p>
+            </div>
+            <div class="suggested-item">
+                <img src="img5/IMG_20250402_141437_805.jpg" alt="منتج مقترح 1">
+                <p>Medion</p>
+            </div>
+            <div class="suggested-item">
+                <a href="dell_A6_6th_17inch.html"><img src="img5/IMG_20250402_124007_710.jpg" alt="منتج مقترح 2"></a>
+                <a href=""><p>Dell Inspiton 5755</p></a>
+            </div>
+        </div>
+    </div>
+    <div class="social-bar">
+        تابعنا على:
+        <a href="#">فيسبوك</a> |
+        <a href="#">تويتر</a> |
+        <a href="#">إنستجرام</a>
+    </div>
+    <script>
+        function changeImage(element) {
+            let mainImage = document.getElementById("mainImage");
+            mainImage.src = element.src;
+        }
+        function zoom(event) {
+            let zoomed = document.getElementById("zoomed");
+            let img = document.getElementById("mainImage");
+            let rect = img.getBoundingClientRect();
+            let x = ((event.clientX - rect.left) / rect.width) * 100;
+            let y = ((event.clientY - rect.top) / rect.height) * 100;
+            zoomed.style.backgroundImage = `url(${img.src})`;
+            zoomed.style.backgroundPosition = `${x}% ${y}%`;
+            zoomed.style.display = "block";
+        }
+        function hideZoom() {
+            document.getElementById("zoomed").style.display = "none";
+        }
+    </script>
+</body>
+</html>
