@@ -5,6 +5,7 @@ body {
     color: #f1e9e9;
     background-image: url(img/dp-big-portfolio-021.png);
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 header {
