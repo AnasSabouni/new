@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض المنتج - أمازون</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            direction: rtl; /* التوجيه من اليمين لليسار */
+        }
+        .container {
+            position: relative;
+            width: 80%;
+            height: 100%;
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-between; /* توزيع المسافة بين الصور والمواصفات */
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .product-image {
+            position: relative;
+            direction: ltr;
+            width: 20%;
+            height: 50%;
+            right: 75%;
+            top: 10%;
+        
+        }
+        .product-image img {
+            width: 100%;
+            height: 50%;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        
+        .zoomed {
+            position: absolute;
+            left: 320px;
+            top: 0;
+            width: 520px;
+            height: 500px;
+            border: 1px solid #ccc;
+            display: none;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            background-size: 300%;
+            z-index: 10; /* جعل الزوم فوق العناصر الأخرى */
+        }
+        .thumbnail-container {
+            display: flex;
+            margin-top: 10px;
+        }
+        .thumbnail {
+            width: 10%;
+            height: 50%;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        .product-details {
+            margin-right: 20px; /* تغيير الاتجاه لليمين */
+            width: 60%; /* تحديد عرض المواصفات */
+            height: 100%;
+        }
+        .product-title {
+            position: relative;
+            font-size: 160%;
+            font-weight: bold;
+            left: 58%;
+            top: 10%;
+        }
+        .price {
+            position: relative;
+            font-size: 180%;
+            color: #b12704;
+            margin: 10px 0;
+            display: inline-block;
+            left: 58%;
+            top: 65%;
+            
+        }
+        .zoom-info {
+            position: relative;
+            font-size: 50%;
+            color: #555;
+            display: inline-block;
+            margin-right: 10px;
+            right: 100%;
+            bottom: 420px;
+        }
+        .rating {
+            position: relative;
+            color: gold;
+            font-size: 160%;
+            left: 59%;
+            top: 65%;
+        }
+        .description {
+            position: relative;
+            font-size: 100%;
+            margin: 10px 0;
+            color: #555;
+            left: 60%;
+        }
+        .buy-button {
+            position: relative;
+            background: #ff9900;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            left: 59%;
+            top: 3%;
+        }
+        .suggested-products {
+            position: relative;
+            margin-top: 30px;
+            height: 45%;
+        }
+        .suggested-products h3 {
+            margin-bottom: 10px;
+        }
+        .suggested-container {
+            display: flex;
+        }
+        .suggested-item {
+            width: 50%;
+            margin: 0 15px; /* زيادة المسافة بين العناصر */
+            text-align: center;
+        }
+        .suggested-item img {
+            width: 100%;
+            border-radius: 5%;
+        }
+        .social-bar {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .social-bar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .product-image {
+                width: 100%;
+            }
+            .product-details {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="product-image">
+            <img id="mainImage" src="img4/IMG_20250402_124006_914.jpg" alt="صورة المنتج" onmousemove="zoom(event)" onmouseleave="hideZoom()">
+            <div class="zoomed" id="zoomed"></div>
+            <div class="thumbnail-container">
+                <img class="thumbnail" src="img4/IMG_20250402_124007_710.jpg" onclick="changeImage(this)">
+                <img class="thumbnail" src="img4/IMG_20250402_124007_151.jpg" onclick="changeImage(this)">
+                <img class="thumbnail" src="img4/IMG_20250402_124006_914.jpg" onclick="changeImage(this)">
+            </div>
+        </div>
+        <div class="product-details">
+            <div class="product-title">Dell Inspiron 5755</div>
+            <div class="rating">★★★★★</div>
+            <div class="price">
+                $179.99
+                <span class="zoom-info">اضغط على الصورة و ضع المؤشر على الصورة على اليمين للتكبير</span>
+            </div>
+            <div class="description"><br>🚀 المعالج: AMD A6 - الجيل السادس | أداء فائق السرعة لتعدد المهام بسلاسة.</br>
+
+                <br>🎮 كرت الشاشة: AMD Radeon R4 - 1GB | تجربة رسومات مذهلة لألعابك وتطبيقاتك المفضلة.</br>
+                
+                <br>💾 الهارد: 128GB SSD | سرعة فائقة في التحميل والعمليات اليومية، وداعًا للانتظار.</br>
+                
+                <br>🧠 الرام: 4GB DDR3L | أداء مستقر لتعدد التطبيقات بدون تقطيع أو تأخير.</br>
+                
+                <br>📺 الشاشة: 17.3 إنش HD | شاشة ضخمة ومذهلة، استمتع بتجربة بصرية لا مثيل لها.</br></div>
+            <a href="#" class="buy-button">أضف إلى السلة</a>
+        </div>
+    </div>
+    <div class="container suggested-products">
+        <h3>منتجات مقترحة</h3>
+        <div class="suggested-container">
+            <div class="suggested-item">
+                <img src="img4/IMG_20250402_132652_611.jpg" alt="منتج مقترح 1">
+                <p>HP Pavilion</p>
+            </div>
+            <div class="suggested-item">
+                <img src="img4/IMG_20250402_132653_054.jpg" alt="منتج مقترح 2">
+                <p>HP Victus</p>
+            </div>
+            <div class="suggested-item">
+                <a href="samsung.html"><img src="img4/IMG_20250402_134212_921.jpg" loading="lazy" alt="منتج مقترح 3"></a>
+                <a href="samsung.html"><p>Samsung</p></a>
+            </div>
+            <div class="suggested-item">
+                <img src="img4/IMG_20250402_141306_467.jpg" loading="lazy" alt="منتج مقترح 1">
+                <p>Lenovo Thinkpad p1 Gen4</p>
+            </div>
+            <div class="suggested-item">
+                <img src="img4/IMG_20250402_141438_095.jpg" loading="lazy" alt="منتج مقترح 2">
+                <p>Dell gaming G5s</p>
+            </div>
+            <div class="suggested-item">
+                <img src="img4/IMG_20250402_141437_950.jpg" loading="lazy" alt="منتج مقترح 3">
+                <p>Dell Latitude 5500</p>
+            </div>
+            <div class="suggested-item">
+                <img src="img4/IMG_20250402_141437_805.jpg" loading="lazy" alt="منتج مقترح 1">
+                <p>Medion</p>
+            </div>
+            <div class="suggested-item">
+                <a href="dell_xps_4k.html"><img src="img4/IMG_20250402_141437_594.jpg" loading="lazy" alt="منتج مقترح 2"></a>
+                <a href="dell_xps_4k.html"><p>Dell XPS 9560 4k</p></a>
+            </div>
+        </div>
+    </div>
+    <div class="social-bar">
+        تابعنا على:
+        <a href="#">فيسبوك</a> |
+        <a href="#">تويتر</a> |
+        <a href="#">إنستجرام</a>
+    </div>
+    <script>
+        function changeImage(element) {
+            let mainImage = document.getElementById("mainImage");
+            mainImage.src = element.src;
+        }
+        function zoom(event) {
+            let zoomed = document.getElementById("zoomed");
+            let img = document.getElementById("mainImage");
+            let rect = img.getBoundingClientRect();
+            let x = ((event.clientX - rect.left) / rect.width) * 100;
+            let y = ((event.clientY - rect.top) / rect.height) * 100;
+            zoomed.style.backgroundImage = `url(${img.src})`;
+            zoomed.style.backgroundPosition = `${x}% ${y}%`;
+            zoomed.style.display = "block";
+        }
+        function hideZoom() {
+            document.getElementById("zoomed").style.display = "none";
+        }
+    </script>
+</body>
+</html>

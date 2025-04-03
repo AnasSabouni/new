@@ -6,6 +6,7 @@ body {
     background-image: url(img/dp-big-portfolio-021.png);
     background-size: cover;
     background-repeat: no-repeat;
+    object-fit: contain;
 }
 
 header {
