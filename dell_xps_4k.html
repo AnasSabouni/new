@@ -16,28 +16,39 @@
         .container {
             position: relative;
             width: 80%;
-            height: 600px;
+            height: 100%;
             margin: 20px auto;
             display: flex;
             justify-content: space-between; /* توزيع المسافة بين الصور والمواصفات */
             background: white;
-            padding: 20px;
+            padding: 5%;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         .product-image {
             position: relative;
             direction: ltr;
-            width: 300px;
-            right: 1200px;
+            width: 16%;
+            right: 80%;
             top: 50px;
         
         }
         .product-image img {
-            width: 100%;
+            width: 110%;
             height: auto;
             border-radius: 10px;
             cursor: pointer;
+        }
+        .product-image .mainimage {
+            position: relative;
+            width: 140%;
+            height: auto;
+            bottom: 30px;
+            border-radius: 30px;
+            box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.473);
+            filter: blur(5px) grayscale(8px) brightness(4px);
+            list-style-type: circle;
+            border-bottom: 3px solid rgb(255, 255, 255);
         }
         .zoomed {
             position: absolute;
@@ -95,15 +106,17 @@
         .rating {
             position: relative;
             color: gold;
-            font-size: 30px;
+            font-size: 150%;
             left: 580px;
             top: 420px;
         }
         .description {
             position: relative;
+            font-size: 100%;
             margin: 10px 0;
             color: #555;
             left: 600px;
+            bottom: 10%;
         }
         .buy-button {
             position: relative;
@@ -120,7 +133,8 @@
         .suggested-products {
             position: relative;
             margin-top: 30px;
-            height: 150px;
+            height: 30%;
+            padding: 2%;
         }
         .suggested-products h3 {
             margin-bottom: 10px;
@@ -129,7 +143,7 @@
             display: flex;
         }
         .suggested-item {
-            width: 150px;
+            width: 100%;
             margin: 0 15px; /* زيادة المسافة بين العناصر */
             text-align: center;
         }
@@ -143,20 +157,20 @@
             color: white;
             text-align: center;
             padding: 10px;
-            margin-top: 20px;
+            margin-top: 2.5%;
         }
         .social-bar a {
             color: white;
             text-decoration: none;
             margin: 0 10px;
-            font-size: 18px;
+            font-size: 80%;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="product-image">
-            <img id="mainImage" src="img5/IMG_20250402_141437_594.jpg" alt="صورة المنتج" onmousemove="zoom(event)" onmouseleave="hideZoom()">
+            <img class="mainimage" id="mainImage" src="img5/IMG_20250402_141437_594.jpg" alt="صورة المنتج" onmousemove="zoom(event)" onmouseleave="hideZoom()">
             <div class="zoomed" id="zoomed"></div>
             <div class="thumbnail-container">
                 <img class="thumbnail" src="img5/IMG_20250402_141437_594.jpg" onclick="changeImage(this)">
@@ -189,35 +203,35 @@
         <h3>منتجات مقترحة</h3>
         <div class="suggested-container">
             <div class="suggested-item">
-                <img src="img5/IMG_20250402_132652_611.jpg" loading="lazy" alt="منتج مقترح 1">
+                <img src="img5/IMG_20250402_132652_611.png" loading="lazy" alt="منتج مقترح 1">
                 <p>HP Pavilion</p>
             </div>
             <div class="suggested-item">
-                <img src="img5/IMG_20250402_132653_054.jpg" loading="lazy" alt="منتج مقترح 2">
+                <img src="img5/IMG_20250402_132653_054.png" loading="lazy" alt="منتج مقترح 2">
                 <p>HP Victus</p>
             </div>
             <div class="suggested-item">
-                <a href="samsung.html"><img src="img5/IMG_20250402_134212_921.jpg" loading="lazy" alt="منتج مقترح 3"></a>
+                <a href="samsung.html"><img src="img5/IMG_20250402_134212_921.png" loading="lazy" alt="منتج مقترح 3"></a>
                 <a href="samsung.html"><p>Samsung</p></a>
             </div>
             <div class="suggested-item">
-                <img src="img5/IMG_20250402_141306_467.jpg" loading="lazy" alt="منتج مقترح 1">
+                <img src="img5/IMG_20250402_141306_467.png" loading="lazy" alt="منتج مقترح 1">
                 <p>Lenovo Thinkpad p1 Gen4</p>
             </div>
             <div class="suggested-item">
-                <img src="img5/IMG_20250402_141438_095.jpg" loading="lazy" alt="منتج مقترح 2">
+                <img src="img5/IMG_20250402_141438_095.png" loading="lazy" alt="منتج مقترح 2">
                 <p>Dell gaming G5s</p>
             </div>
             <div class="suggested-item">
-                <img src="img5/IMG_20250402_141437_950.jpg" loading="lazy" alt="منتج مقترح 3">
+                <img src="img5/IMG_20250402_141437_950.png" loading="lazy" alt="منتج مقترح 3">
                 <p>Dell Latitude 5500</p>
             </div>
             <div class="suggested-item">
-                <img src="img5/IMG_20250402_141437_805.jpg" loading="lazy" alt="منتج مقترح 1">
+                <img src="img5/IMG_20250402_141437_805.png" loading="lazy" alt="منتج مقترح 1">
                 <p>Medion</p>
             </div>
             <div class="suggested-item">
-                <a href="dell_A6_6th_17inch.html"><img src="img5/IMG_20250402_124007_710.jpg" loading="lazy" alt="منتج مقترح 2"></a>
+                <a href="dell_A6_6th_17inch.html"><img src="img5/IMG_20250402_124007_710.png" loading="lazy" alt="منتج مقترح 2"></a>
                 <a href="dell_A6_6th_17inch.html"><p>Dell Inspiton 5755</p></a>
             </div>
         </div>
