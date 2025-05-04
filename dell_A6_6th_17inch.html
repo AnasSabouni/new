@@ -9,6 +9,7 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
+            height: auto;
             padding: 0;
             background-color: #f7f7f7;
             direction: rtl; /* التوجيه من اليمين لليسار */
@@ -16,11 +17,13 @@
         .container {
             position: relative;
             width: 90%;
-            height: auto;
-            margin: 30px auto;
+            height: 100%;
+            margin: 20px auto;
+            display: flex;
             justify-content: space-between; /* توزيع المسافة بين الصور والمواصفات */
             background: white;
-            padding: 3%;
+            padding: 20px;
+            padding-bottom: 70px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
@@ -28,22 +31,22 @@
             position: relative;
             direction: ltr;
             width: 20%;
+            height: 50%;
             right: 80%;
-            top: 10%;
-            height: 100%;
+            top: 50px;
         
         }
         .product-image img {
-            width: 100%;
+            width: 80%;
             height: auto;
             border-radius: 10px;
             cursor: pointer;
         }
         .product-image .mainimage {
             position: relative;
-            width: 130%;
+            width: 150%;
             height: auto;
-            bottom: 10%;
+            bottom: 30px;
             border-radius: 30px;
             box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.473);
             filter: blur(5px) grayscale(8px) brightness(4px);
@@ -74,49 +77,52 @@
             cursor: pointer;
         }
         .product-details {
-            position: relative;
             margin-right: 20px; /* تغيير الاتجاه لليمين */
             width: 60%; /* تحديد عرض المواصفات */
-            height: 10px;
         }
         .product-title {
             position: relative;
-            font-size: 30px;
+            font-size: 200%;
             font-weight: bold;
-            bottom: 3800%;
+            left: 50%;
+            top: 20px;
         }
         .price {
             position: relative;
-            font-size: 30px;
+            font-size: 210%;
             color: #b12704;
             margin: 10px 0;
             display: inline-block;
-            bottom: 110px;
-            right: 150px;
+            left: 15%;
+            top: 75%;
             
         }
         .zoom-info {
             position: relative;
-            font-size: 50%;
-            width: 70%;
+            font-size: 16px;
             color: #555;
             display: inline-block;
-            right: 140%;
+            margin-right: 10px;
+            width: 30%;
             bottom: 420px;
         }
         .rating {
             position: relative;
             color: gold;
-            font-size: 30px;
-            bottom: 130px;
+            font-size: 220%;
+            left: 45%;
+            padding-left: 10px;
+            padding-top: 20px;
+            top: 85%;
         }
         .description {
             position: relative;
-            font-size: 10px;
-            width: 50%;
-            margin: 10px 0;
+            font-size: 140%;
+            width: 70%;
+            height: 60%;
+            margin-bottom: 10px;
             color: #555;
-            bottom: 500px;
+            left: 65%;
         }
         .buy-button {
             position: relative;
@@ -127,11 +133,12 @@
             border-radius: 5px;
             display: inline-block;
             margin-top: 10px;
-            bottom: 430px;
+            left: 65%;
+            top: 20px;
         }
         .suggested-products {
             position: relative;
-            margin-top: 3%;
+            margin-top: 30px;
             height: 150px;
         }
         .suggested-products h3 {
@@ -141,12 +148,13 @@
             display: flex;
         }
         .suggested-item {
-            width: 110%;
+            width: 90%;
             margin: 0 15px; /* زيادة المسافة بين العناصر */
             text-align: center;
         }
         .suggested-item img {
             width: 100%;
+            height: 100%;
             border-radius: 5px;
             image-resolution: 50% 50%;
         }
@@ -155,13 +163,46 @@
             color: white;
             text-align: center;
             padding: 10px;
-            margin-top: 20px;
+            margin-top: 1%;
         }
         .social-bar a {
             color: white;
             text-decoration: none;
             margin: 0 10px;
             font-size: 18px;
+        }
+        @media (max-width: 768px)
+        {
+            .product-image{
+                right: 0%;
+            }
+            .product-image img{
+                width: 50px;
+            }
+            .product-image .mainimage{
+                width: 50px;
+            }
+            .suggested-item{
+                width: auto;
+                
+            }
+            .container suggested-products{
+                width: 100%;
+                left: 100px;
+            }
+            .suggested-container{
+                width: 50px;
+                left: 100%;
+            }
+            .suggested-item img{
+                width: 50%;
+            }
+            .price{
+                left: 0px;
+                top: 0px;
+                font-size: 50%;
+            }
+        
         }
     </style>
 </head>
@@ -181,7 +222,7 @@
             <div class="rating">★★★★★</div>
             <div class="price">
                 $179.99
-                <span class="zoom-info">اضغط على الصورة و ضع المؤشر على الصورة على اليمين للتكبير</span>
+                
             </div>
             <div class="description"><br>🚀 المعالج: AMD A6 - الجيل السادس | أداء فائق السرعة لتعدد المهام بسلاسة.</br>
 
@@ -193,6 +234,7 @@
                 
                 <br>📺 الشاشة: 17.3 إنش HD | شاشة ضخمة ومذهلة، استمتع بتجربة بصرية لا مثيل لها.</br></div>
             <a href="https://wa.me/963962400291?text=مرحبا%20أريد%20الاستفسار%20عن%20اللابتوب%20Dell_A6_6th" class="buy-button">للشراء</a>
+            <span class="zoom-info">اضغط على الصورة و ضع المؤشر على الصورة على اليمين للتكبير</span>
         </div>
     </div>
     <div class="container suggested-products">
@@ -216,20 +258,17 @@
             </div>
             <div class="suggested-item">
                 <img src="imgl/IMG_20250402_141438_095.png" alt="منتج مقترح 2">
-                <p>Dell gaming G5s</p>
+                <a href="Dell Gaming G5s.html"><p>Dell gaming G5s</p></a>
             </div>
             <div class="suggested-item">
                 <img src="imgl/IMG_20250402_141437_950.png" alt="منتج مقترح 3">
-                <p>Dell Latitude 5500</p>
+                <a href="dell5500.html"><p>Dell Latitude 5500</p></a>
             </div>
             <div class="suggested-item">
                 <a href="Medion.html"><img src="imgl/IMG_20250402_141437_805.png" alt="منتج مقترح 1"></a>
                 <a href="Medion.html"><p>Medion</p></a>
             </div>
-            <div class="suggested-item">
-                <a href="dell_xps_4k.html"><img src="imgl/IMG_20250402_141437_594.png" alt="منتج مقترح 2"></a>
-                <a href="dell_xps_4k.html"><p>Dell XPS 9560 4k</p></a>
-            </div>
+            
         </div>
     </div>
     <div class="social-bar">

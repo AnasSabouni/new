@@ -9,6 +9,7 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
+            height: auto;
             padding: 0;
             background-color: #f7f7f7;
             direction: rtl; /* التوجيه من اليمين لليسار */
@@ -16,32 +17,34 @@
         .container {
             position: relative;
             width: 90%;
-            height: 600px;
+            height: 100%;
             margin: 20px auto;
             display: flex;
             justify-content: space-between; /* توزيع المسافة بين الصور والمواصفات */
             background: white;
             padding: 20px;
+            padding-bottom: 70px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         .product-image {
             position: relative;
             direction: ltr;
-            width: 300px;
+            width: 20%;
+            height: 50%;
             right: 80%;
             top: 50px;
         
         }
         .product-image img {
-            width: 350px;
+            width: 80%;
             height: auto;
             border-radius: 10px;
             cursor: pointer;
         }
         .product-image .mainimage {
             position: relative;
-            width: 400px;
+            width: 150%;
             height: auto;
             bottom: 30px;
             border-radius: 30px;
@@ -79,19 +82,19 @@
         }
         .product-title {
             position: relative;
-            font-size: 24px;
+            font-size: 200%;
             font-weight: bold;
-            left: 500px;
+            left: 50%;
             top: 20px;
         }
         .price {
             position: relative;
-            font-size: 30px;
+            font-size: 210%;
             color: #b12704;
             margin: 10px 0;
             display: inline-block;
-            left: 570px;
-            top: 420px;
+            left: 15%;
+            top: 75%;
             
         }
         .zoom-info {
@@ -100,22 +103,26 @@
             color: #555;
             display: inline-block;
             margin-right: 10px;
-            right: 570px;
+            width: 30%;
             bottom: 420px;
         }
         .rating {
             position: relative;
             color: gold;
-            font-size: 30px;
-            left: 580px;
-            top: 420px;
+            font-size: 220%;
+            left: 45%;
+            padding-left: 10px;
+            padding-top: 20px;
+            top: 85%;
         }
         .description {
             position: relative;
-            font-size: 100%;
-            margin: 10px 0;
+            font-size: 140%;
+            width: 70%;
+            height: 60%;
+            margin-bottom: 10px;
             color: #555;
-            left: 600px;
+            left: 65%;
         }
         .buy-button {
             position: relative;
@@ -126,7 +133,7 @@
             border-radius: 5px;
             display: inline-block;
             margin-top: 10px;
-            left: 575px;
+            left: 65%;
             top: 20px;
         }
         .suggested-products {
@@ -141,12 +148,13 @@
             display: flex;
         }
         .suggested-item {
-            width: 150px;
+            width: 90%;
             margin: 0 15px; /* زيادة المسافة بين العناصر */
             text-align: center;
         }
         .suggested-item img {
             width: 100%;
+            height: 100%;
             border-radius: 5px;
             image-resolution: 50% 50%;
         }
@@ -155,13 +163,46 @@
             color: white;
             text-align: center;
             padding: 10px;
-            margin-top: 20px;
+            margin-top: 1%;
         }
         .social-bar a {
             color: white;
             text-decoration: none;
             margin: 0 10px;
             font-size: 18px;
+        }
+        @media (max-width: 768px)
+        {
+            .product-image{
+                right: 0%;
+            }
+            .product-image img{
+                width: 50px;
+            }
+            .product-image .mainimage{
+                width: 50px;
+            }
+            .suggested-item{
+                width: auto;
+                
+            }
+            .container suggested-products{
+                width: 100%;
+                left: 100px;
+            }
+            .suggested-container{
+                width: 50px;
+                left: 100%;
+            }
+            .suggested-item img{
+                width: 50%;
+            }
+            .price{
+                left: 0px;
+                top: 0px;
+                font-size: 50%;
+            }
+        
         }
     </style>
 </head>
@@ -181,19 +222,19 @@
             <div class="rating">★★★★★</div>
             <div class="price">
                 $199.99
-                <span class="zoom-info">اضغط على الصورة و ضع المؤشر على الصورة على اليمين للتكبير</span>
+                
             </div>
-            <div class="description"><br>🚀 المعالج: AMD A6 - الجيل السادس | أداء فائق السرعة لتعدد المهام بسلاسة.</br>
+            <div class="description"><br>🚀 المعالج: Intel i5 - الجيل العاشر | أداء فائق السرعة لتعدد المهام بسلاسة.</br>
 
-                <br>🎮 كرت الشاشة: AMD Radeon R4 - 1GB | تجربة رسومات مذهلة لألعابك وتطبيقاتك المفضلة.</br>
+                <br>🎮 كرت الشاشة: Intel HD Graphics | تجربة رسومات مذهلة لأعمالك وتطبيقاتك المفضلة.</br>
                 
                 <br>💾 الهارد: 128GB SSD | سرعة فائقة في التحميل والعمليات اليومية، وداعًا للانتظار.</br>
                 
-                <br>🧠 الرام: 4GB DDR3L | أداء مستقر لتعدد التطبيقات بدون تقطيع أو تأخير.</br>
+                <br>🧠 الرام: 8GB DDR3L | أداء مستقر لتعدد التطبيقات بدون تقطيع أو تأخير.</br>
                 
-                <br>📺 الشاشة: 17.3 إنش HD | شاشة ضخمة ومذهلة، استمتع بتجربة بصرية لا مثيل لها.</br></div>
-            <a href="https://wa.me/963962400291?text=مرحبا%20أريد%20الاستفسار%20عن%20اللابتوب%20Samsung
-            " class="buy-button">للشراء</a>
+                <br>📺 الشاشة: 15.6 إنش FHD | شاشة ضخمة ومذهلة، استمتع بتجربة بصرية لا مثيل لها.</br></div>
+            <a href="https://wa.me/963962400291?text=مرحبا%20أريد%20الاستفسار%20عن%20اللابتوب%20Samsung" class="buy-button">للشراء</a>
+            <span class="zoom-info">اضغط على الصورة و ضع المؤشر على الصورة على اليمين للتكبير</span>
         </div>
     </div>
     <div class="container suggested-products">
@@ -227,10 +268,7 @@
                 <a href="Medion.html"><img src="imgl/IMG_20250402_141437_805.png" loading="lazy" alt="منتج مقترح 1"></a>
                 <a href="Medion.html"><p>Medion</p></a>
             </div>
-            <div class="suggested-item">
-                <a href="dell_xps_4k.html"><img src="imgl/IMG_20250402_141437_594.png" loading="lazy" alt="منتج مقترح 2"></a>
-                <a href="dell_xps_4k.html"><p>Dell XPS 9560 4k</p></a>
-            </div>
+            
         </div>
     </div>
     <div class="social-bar">

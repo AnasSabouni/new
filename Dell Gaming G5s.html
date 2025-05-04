@@ -9,46 +9,49 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
+            height: auto;
             padding: 0;
-            background-color: rgb(58, 11, 110);
+            background-color: #f7f7f7;
             direction: rtl; /* التوجيه من اليمين لليسار */
         }
         .container {
             position: relative;
             width: 90%;
-            height: 600px;
+            height: 100%;
             margin: 20px auto;
             display: flex;
             justify-content: space-between; /* توزيع المسافة بين الصور والمواصفات */
-            background: rgb(255, 255, 255);
+            background: white;
             padding: 20px;
+            padding-bottom: 70px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         .product-image {
             position: relative;
             direction: ltr;
-            max-width: 20%;
-            right: 75%;
-            top: 70px;
+            width: 20%;
+            height: 50%;
+            right: 80%;
+            top: 50px;
         
         }
         .product-image img {
-            width: 220px;
+            width: 80%;
             height: auto;
             border-radius: 10px;
             cursor: pointer;
         }
         .product-image .mainimage {
             position: relative;
-            width: 480px;
+            width: 150%;
             height: auto;
             bottom: 30px;
             border-radius: 30px;
             box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.473);
             filter: blur(5px) grayscale(8px) brightness(4px);
             list-style-type: circle;
-            border-bottom: 3px solid rgb(58, 11, 110);
+            border-bottom: 3px solid rgb(255, 255, 255);
         }
         .zoomed {
             position: absolute;
@@ -79,47 +82,47 @@
         }
         .product-title {
             position: relative;
-            font-size: 180%;
+            font-size: 200%;
             font-weight: bold;
-            color: rgb(58, 11, 110);
             left: 50%;
-            top: 30px;
+            top: 20px;
         }
         .price {
             position: relative;
-            font-size: 30px;
+            font-size: 210%;
             color: #b12704;
             margin: 10px 0;
             display: inline-block;
-            left: 60%;
-            top: 420px;
+            left: 15%;
+            top: 75%;
             
         }
         .zoom-info {
             position: relative;
-            font-size: 90%;
-            width: 60%;
-            color: #000000;
+            font-size: 16px;
+            color: #555;
             display: inline-block;
-            left: 200%;
+            margin-right: 10px;
+            width: 30%;
             bottom: 420px;
         }
         .rating {
             position: relative;
             color: gold;
-            font-size: 30px;
-            left: 60%;
-            top: 420px;
+            font-size: 220%;
+            left: 45%;
+            padding-left: 10px;
+            padding-top: 20px;
+            top: 85%;
         }
         .description {
             position: relative;
-            font-size: 110%;
-            width: 50%;
-            height: 350px;
-            margin: 10px 0;
-            color:rgb(0, 0, 0);
-            left: 60%;
-            bottom: 50px;
+            font-size: 140%;
+            width: 70%;
+            height: 60%;
+            margin-bottom: 10px;
+            color: #555;
+            left: 65%;
         }
         .buy-button {
             position: relative;
@@ -130,56 +133,76 @@
             border-radius: 5px;
             display: inline-block;
             margin-top: 10px;
-            text-align: center;
-            left: 30%;
-            top: 10px;
-            width: 10%;
-            height: auto;
-            border: 2px solid rgb(0, 0, 0);
+            left: 65%;
+            top: 20px;
         }
         .suggested-products {
             position: relative;
             margin-top: 30px;
             height: 150px;
-            width: 90%;
         }
         .suggested-products h3 {
-            position: relative;
-            top: 30px;
-            color: rgb(58, 11, 110);
+            margin-bottom: 10px;
         }
         .suggested-container {
             display: flex;
         }
         .suggested-item {
-            position: relative;
             width: 90%;
             margin: 0 15px; /* زيادة المسافة بين العناصر */
             text-align: center;
         }
-        .suggested-item p {
-            color: rgb(0, 0, 0);
-        }
         .suggested-item img {
-            position: relative;
             width: 100%;
-            max-height: 100px;
+            height: 100%;
             border-radius: 5px;
             image-resolution: 50% 50%;
         }
         .social-bar {
-            background: rgb(44, 44, 44);
-            border-top: 5px solid rgb(255, 255, 255);
-            color: rgb(255, 255, 255);
+            background: #333;
+            color: white;
             text-align: center;
             padding: 10px;
-            margin-top: 20px;
+            margin-top: 1%;
         }
         .social-bar a {
-            color: rgb(255, 255, 255);
+            color: white;
             text-decoration: none;
             margin: 0 10px;
             font-size: 18px;
+        }
+        @media (max-width: 768px)
+        {
+            .product-image{
+                right: 0%;
+            }
+            .product-image img{
+                width: 50px;
+            }
+            .product-image .mainimage{
+                width: 50px;
+            }
+            .suggested-item{
+                width: auto;
+                
+            }
+            .container suggested-products{
+                width: 100%;
+                left: 100px;
+            }
+            .suggested-container{
+                width: 50px;
+                left: 100%;
+            }
+            .suggested-item img{
+                width: 50%;
+            }
+            .price{
+                left: 0px;
+                top: 0px;
+                font-size: 50%;
+            }
+        
         }
     </style>
 </head>
@@ -193,7 +216,7 @@
                 <img class="thumbnail" src="imgh/IMG_20250402_141437_923.jpg" onclick="changeImage(this)">
                 <img class="thumbnail" src="imgh/IMG_20250402_141438_274.jpg" onclick="changeImage(this)">
             </div>
-            <span class="zoom-info">اضغط على الصورة و ضع المؤشر على الصورة على اليمين للتكبير</span>
+            
         </div>
         <div class="product-details">
             <div class="product-title">Dell Gaming G5s</div>
@@ -212,6 +235,7 @@
                 
                 <br>📺 الشاشة: 17.3 إنش HD | شاشة ضخمة ومذهلة، استمتع بتجربة بصرية لا مثيل لها.</br></div>
             <a href="https://wa.me/963962400291?text=مرحبا%20أريد%20الاستفسار%20عن%20اللابتوب%20Dell_Gaming_G5s" class="buy-button">للشراء</a>
+            <span class="zoom-info">اضغط على الصورة و ضع المؤشر على الصورة على اليمين للتكبير</span>
         </div>
     </div>
     <div class="container suggested-products">
@@ -235,20 +259,17 @@
             </div>
             <div class="suggested-item">
                 <img src="imgl/IMG_20250402_124007_710.png" alt="منتج مقترح 2">
-                <p>Dell Precion 5755</p>
+                <a href="dell_A6_6th_17inch.html"><p>Dell Precion 5755</p></a>
             </div>
             <div class="suggested-item">
                 <img src="imgl/IMG_20250402_141437_950.png" alt="منتج مقترح 3">
-                <p>Dell Latitude 5500</p>
+                <a href="dell5500.html"><p>Dell Latitude 5500</p></a>
             </div>
             <div class="suggested-item">
                 <a href="Medion.html"><img src="imgl/IMG_20250402_141437_805.png" alt="منتج مقترح 1"></a>
                 <a href="Medion.html"><p>Medion</p></a>
             </div>
-            <div class="suggested-item">
-                <a href="dell_xps_4k.html"><img src="imgl/IMG_20250402_141437_594.png" alt="منتج مقترح 2"></a>
-                <a href="dell_xps_4k.html"><p>Dell XPS 9560 4k</p></a>
-            </div>
+            
         </div>
     </div>
     <div class="social-bar">
