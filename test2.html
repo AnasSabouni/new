@@ -1,61 +1,56 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <link rel="icon" type="image/png" sizes="32*32" href="main img/475536097_923477753298492_2196399413086926107_n.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="main img/475536097_923477753298492_2196399413086926107_n.jpg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr.Laptop Dell 5500</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             height: auto;
             padding: 0;
-            background-color: #f7f7f7;
-            direction: rtl; /* التوجيه من اليمين لليسار */
+            background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+            color: #333;
+            direction: rtl;
         }
         .container {
             position: relative;
             width: 90%;
-            height: 100%;
             margin: 20px auto;
             display: flex;
-            justify-content: space-between; /* توزيع المسافة بين الصور والمواصفات */
+            justify-content: space-between;
             background: white;
             padding: 20px;
             padding-bottom: 70px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         .product-image {
             position: relative;
             direction: ltr;
-            width: 20%;
-            height: 50%;
-            right: 80%;
+            width: 30%;
             top: 50px;
-        
         }
         .product-image img {
-            width: 80%;
+            width: 100%;
             height: auto;
             border-radius: 10px;
             cursor: pointer;
         }
         .product-image .mainimage {
             position: relative;
-            width: 150%;
+            width: 100%;
             height: auto;
-            bottom: 30px;
             border-radius: 30px;
-            box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.473);
-            filter: blur(5px) grayscale(8px) brightness(4px);
-            list-style-type: circle;
-            border-bottom: 3px solid rgb(255, 255, 255);
+            box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.3);
+            filter: blur(3px) grayscale(5%) brightness(100%);
+            border-bottom: 3px solid #fff;
         }
         .zoomed {
             position: absolute;
-            left: 152%;
+            left: 105%;
             top: 0;
             width: 150%;
             height: 75%;
@@ -64,150 +59,161 @@
             overflow: hidden;
             background-repeat: no-repeat;
             background-size: 300%;
-            z-index: 10; /* جعل الزوم فوق العناصر الأخرى */
+            z-index: 10;
         }
         .thumbnail-container {
             display: flex;
             margin-top: 10px;
+            gap: 5px;
         }
         .thumbnail {
             width: 60px;
             height: auto;
-            margin-left: 5px;
             cursor: pointer;
+            border-radius: 5px;
+            border: 2px solid #ccc;
         }
         .product-details {
-            margin-right: 20px; /* تغيير الاتجاه لليمين */
-            width: 60%; /* تحديد عرض المواصفات */
+            width: 65%;
+            margin-right: 20px;
         }
         .product-title {
-            position: relative;
             font-size: 200%;
             font-weight: bold;
-            left: 50%;
-            top: 20px;
         }
         .price {
-            position: relative;
             font-size: 210%;
-            color: #b12704;
+            color: #0d6efd;
             margin: 10px 0;
-            display: inline-block;
-            left: 15%;
-            top: 75%;
-            
+            font-weight: bold;
         }
         .zoom-info {
-            position: relative;
             font-size: 16px;
             color: #555;
-            display: inline-block;
             margin-right: 10px;
-            width: 30%;
-            bottom: 420px;
         }
         .rating {
-            position: relative;
-            color: gold;
+            color: #ffc107;
             font-size: 220%;
-            left: 45%;
-            padding-left: 10px;
             padding-top: 20px;
-            top: 85%;
         }
         .description {
-            position: relative;
             font-size: 140%;
-            width: 70%;
-            height: 60%;
+            color: #444;
             margin-bottom: 10px;
-            color: #555;
-            left: 65%;
-            bottom: 10%;
         }
         .buy-button {
-            position: relative;
-            background: #ff9900;
+            background: #0d6efd;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 24px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
             display: inline-block;
-            margin-top: 10px;
-            left: 65%;
-            top: 20px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .buy-button:hover {
+            background: #0b5ed7;
         }
         .suggested-products {
-            position: relative;
             margin-top: 30px;
-            height: 150px;
         }
         .suggested-products h3 {
             margin-bottom: 10px;
+            color: #0d6efd;
         }
         .suggested-container {
             display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
         .suggested-item {
-            width: 90%;
-            margin: 0 15px; /* زيادة المسافة بين العناصر */
+            width: 23%;
             text-align: center;
         }
         .suggested-item img {
             width: 100%;
-            height: 100%;
             border-radius: 5px;
-            image-resolution: 50% 50%;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
         }
         .social-bar {
-            background: #333;
+            background: #0d6efd;
             color: white;
             text-align: center;
-            padding: 10px;
-            margin-top: 1%;
+            padding: 15px;
+            margin-top: 2%;
+            font-size: 16px;
         }
         .social-bar a {
-            color: white;
+            color: #ffdd57;
             text-decoration: none;
-            margin: 0 10px;
-            font-size: 18px;
+            margin: 0 12px;
+            font-weight: bold;
         }
-        @media (max-width: 768px)
-        {
-        .container {
-            height: 50%;
-        }
-        .product-title {
-            font-size: 100%;
-        }
-        .description {
-            font-size: 60%;
-            bottom: 20%;
-            height: 50%;
-        }
-        .product-image {
-            top: 80px;
-        }
-        .product-details {
-            height: 300px;
-        }
-        .price {
-            font-size: 120%;
-            left: 0%;
-            right: 44%;
-        }
-        .rating {
-            font-size: 100%;
-            left: 0%;
-            top: 75%;
-            right: 40%;
-        }
-        .buy-button {
-            top: -50px;
-            font-size: 10px;
-            
-        }
+
+        /* MOBILE STYLES */
+        @media (max-width: 768px) {
+            body {
+                background: linear-gradient(to top, #D3D3D3, #000000);
             }
+            .container {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+                background: linear-gradient(to top, #1A3E6D, #D4AF37);
+            }
+            .product-image {
+                width: 100%;
+                text-align: center;
+                top: 0;
+            }
+            .product-image img,
+            .product-image .mainimage {
+                width: 40%;
+                height: auto;
+            }
+            .thumbnail-container {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .thumbnail {
+                width: 50px;
+                margin: 5px;
+            }
+            .product-details {
+                width: 100%;
+                text-align: center;
+                margin-right: 0;
+            }
+            .product-title {
+                font-size: 24px;
+            }
+            .price {
+                font-size: 20px;
+            }
+            .rating {
+                font-size: 24px;
+            }
+            .description {
+                font-size: 16px;
+            }
+            .buy-button {
+                font-size: 16px;
+                padding: 10px;
+            }
+            .suggested-container {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .suggested-item {
+                width: 45%;
+                margin: 10px 5px;
+            }
+            .social-bar {
+                font-size: 14px;
+                padding: 10px 5px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -224,20 +230,21 @@
         <div class="product-details">
             <div class="product-title">Dell Latitude 3500</div>
             <div class="rating">★★★★★</div>
-            <div class="price">
-                $199.9
+            <div class="price">$199.9</div>
+            <div class="description">
+                💻 المعالج: Intel Core i5 – الجيل الثامن فئة U<br>
+                🎨 كرت الشاشة: Intel HD Graphics مناسب للأعمال المكتبية والتصاميم<br>
+                🚀 التخزين: SSD – 256GB<br>
+                ⚡ الرام: 8GB DDR4<br>
+                🖥️ الشاشة: 15.6" HD<br>
+                🔋 البطارية: تدوم أكثر من ساعتين<br>
+                ✅ كفالة ترجيع بدون مخاطرة!
             </div>
-            <div class="description"><br>💻 المعالج: Intel Core i5 – الجيل الثامن فئة U (أداء عالي واحترافي)</br>
-                <br>🎨 كرت الشاشة: Intel HD Graphics مناسب للاعمال المكتبية والتصاميم</br>
-                <br>🚀 التخزين: SSD – 256GB (سرعة استجابة خرافية وتشغيل فوري)</br>
-                <br>⚡ الرام: 8GB DDR4 – راحة في المهام المتعددة بدون أي بطء</br>
-                <br>🖥️ الشاشة: 15.6" HD – وضوح عالي وتفاصيل دقيقة</br>
-                <br>🔋 البطارية: تدوم أكثر من ساعتين – مثالية للتنقل والعمل خارج البيت</br>
-                <br>✅ كفالة ترجيع: تقدر ترجّع الجهاز لأي سبب كان – من غير أي مخاطرة!</br></div>
             <a href="https://wa.me/963962400291?text=مرحبا%20أريد%20الاستفسار%20عن%20اللابتوب%20Dell_A6_6th" class="buy-button">للشراء</a>
-            <span class="zoom-info">اضغط على الصورة و ضع المؤشر على الصورة على اليمين للتكبير</span>
+            <div class="zoom-info">اضغط على الصورة و ضع المؤشر على الصورة على اليمين للتكبير</div>
         </div>
     </div>
+
     <div class="container suggested-products">
         <h3>منتجات مقترحة</h3>
         <div class="suggested-container">
@@ -254,34 +261,34 @@
                 <a href="samsung.html"><p>Samsung</p></a>
             </div>
             <div class="suggested-item">
-                <img src="imgl/IMG_20250402_141306_467.png" alt="منتج مقترح 1">
+                <img src="imgl/IMG_20250402_141306_467.png" alt="منتج مقترح 4">
                 <p>Lenovo Thinkpad p1 Gen4</p>
             </div>
             <div class="suggested-item">
-                <img src="imgl/IMG_20250402_141438_095.png" alt="منتج مقترح 2">
+                <img src="imgl/IMG_20250402_141438_095.png" alt="منتج مقترح 5">
                 <a href="Dell Gaming G5s.html"><p>Dell gaming G5s</p></a>
             </div>
             <div class="suggested-item">
-                <a href="dell_A6_6th_17inch.html"><img src="imgl/IMG_20250402_124007_710.png" alt="منتج مقترح 3"></a>
+                <a href="dell_A6_6th_17inch.html"><img src="imgl/IMG_20250402_124007_710.png" alt="منتج مقترح 6"></a>
                 <a href="dell_A6_6th_17inch.html"><p>Dell Precion 5755</p></a>
             </div>
             <div class="suggested-item">
-                <a href="Medion.html"><img src="imgl/IMG_20250402_141437_805.png" alt="منتج مقترح 1"></a>
+                <a href="Medion.html"><img src="imgl/IMG_20250402_141437_805.png" alt="منتج مقترح 7"></a>
                 <a href="Medion.html"><p>Medion</p></a>
             </div>
-            
         </div>
     </div>
+
     <div class="social-bar">
         تابعنا على:
         <a href="https://www.facebook.com/share/14DeYaX1xEf/">فيسبوك</a> |
         <a href="https://wa.me/qr/NGSOMEA3A7WJF1">واتس أب</a> |
         <a href="https://www.instagram.com/doclaptop?utm_source=qr&igsh=eGJpYzQ0aXU2M25t">إنستجرام</a>
-    </div> 
+    </div>
+
     <script>
         function changeImage(element) {
-            let mainImage = document.getElementById("mainImage");
-            mainImage.src = element.src;
+            document.getElementById("mainImage").src = element.src;
         }
         function zoom(event) {
             let zoomed = document.getElementById("zoomed");

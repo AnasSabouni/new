@@ -171,38 +171,68 @@
             margin: 0 10px;
             font-size: 18px;
         }
-        @media (max-width: 768px)
-        {
-            .product-image{
-                right: 0%;
+        /* MOBILE STYLES */
+        @media (max-width: 768px) {
+            body {
+                background: linear-gradient(to top, #D3D3D3, #000000);
             }
-            .product-image img{
-                width: 50px;
+            .container {
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+                background: linear-gradient(to top, #1A3E6D, #D4AF37);
             }
-            .product-image .mainimage{
-                width: 50px;
-            }
-            .suggested-item{
-                width: auto;
-                
-            }
-            .container suggested-products{
+            .product-image {
                 width: 100%;
-                left: 100px;
+                text-align: center;
+                top: 0;
             }
-            .suggested-container{
+            .product-image img,
+            .product-image .mainimage {
+                width: 40%;
+                height: auto;
+            }
+            .thumbnail-container {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .thumbnail {
                 width: 50px;
-                left: 100%;
+                margin: 5px;
             }
-            .suggested-item img{
-                width: 50%;
+            .product-details {
+                width: 100%;
+                text-align: center;
+                margin-right: 0;
             }
-            .price{
-                left: 0px;
-                top: 0px;
-                font-size: 50%;
+            .product-title {
+                font-size: 24px;
             }
-        
+            .price {
+                font-size: 20px;
+            }
+            .rating {
+                font-size: 24px;
+            }
+            .description {
+                font-size: 16px;
+            }
+            .buy-button {
+                font-size: 16px;
+                padding: 10px;
+            }
+            .suggested-container {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .suggested-item {
+                width: 45%;
+                margin: 10px 5px;
+            }
+            .social-bar {
+                font-size: 14px;
+                padding: 10px 5px;
+            }
         }
     </style>
 </head>
