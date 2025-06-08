@@ -171,6 +171,33 @@
             margin: 0 10px;
             font-size: 18px;
         }
+        .suggested-products-container {
+            padding: 4%;
+        }
+
+        .scroll-wrapper {
+            display: flex;
+            overflow-x: auto;
+            gap: 16px;
+            padding-bottom: 10px;
+            scroll-snap-type: x mandatory;
+        }
+
+        .product-card {
+            width: 20%;
+            flex: 0 0 auto;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+            scroll-snap-align: start;
+        }
+        .product-card img {
+            width: 100%;
+        }
+        .product-card a {
+            text-align: center;
+        }
         @media (max-width: 768px)
         {
             .product-image{
@@ -237,38 +264,38 @@
             <span class="zoom-info">اضغط على الصورة و ضع المؤشر على الصورة على اليمين للتكبير</span>
         </div>
     </div>
-    <div class="container suggested-products">
-        <h3>منتجات مقترحة</h3>
-        <div class="suggested-container">
-            <div class="suggested-item">
-                <a href="hp pavilion 15.html"><img src="imgl/IMG_20250402_132652_611.png" alt="منتج مقترح 1"></a>
+    <div class="suggested-products-container">
+        <h2>منتجات مقترحة</h2>
+        <div class="scroll-wrapper">
+            <div class="product-card">
+                <img src="imgl/IMG_20250402_132652_611.png" alt="منتج مقترح 1">
                 <a href="hp pavilion 15.html"><p>HP Pavilion</p></a>
             </div>
-            <div class="suggested-item">
+            <div class="product-card">
                 <img src="imgl/IMG_20250402_132653_054.png" alt="منتج مقترح 2">
-                <p>HP Victus</p>
+                <a href=""><p>HP Victus</p></a>
             </div>
-            <div class="suggested-item">
+            <div class="product-card">
                 <a href="samsung.html"><img src="imgl/IMG_20250402_134212_921.png" alt="منتج مقترح 3"></a>
                 <a href="samsung.html"><p>Samsung</p></a>
             </div>
-            <div class="suggested-item">
+            <div class="product-card">
                 <img src="imgl/IMG_20250402_141306_467.png" alt="منتج مقترح 1">
-                <p>Lenovo Thinkpad p1 Gen4</p>
+                <a href=""><p>Lenovo Thinkpad p1 Gen4</p></a>
             </div>
-            <div class="suggested-item">
+            <div class="product-card">
                 <img src="imgl/IMG_20250402_141438_095.png" alt="منتج مقترح 2">
                 <a href="Dell Gaming G5s.html"><p>Dell gaming G5s</p></a>
             </div>
-            <div class="suggested-item">
-                <img src="imgl/IMG_20250402_141437_950.png" alt="منتج مقترح 3">
-                <a href="dell5500.html"><p>Dell Latitude 5500</p></a>
+            <div class="product-card">
+                <a href="dell_A6_6th_17inch.html"><img src="imgl/IMG_20250402_124007_710.png" alt="منتج مقترح 3"></a>
+                <a href="dell_A6_6th_17inch.html"><p>Dell Precion 5755</p></a>
             </div>
-            <div class="suggested-item">
+            <div class="product-card">
                 <a href="Medion.html"><img src="imgl/IMG_20250402_141437_805.png" alt="منتج مقترح 1"></a>
                 <a href="Medion.html"><p>Medion</p></a>
             </div>
-            
+            <!-- أضف المزيد من البطاقات حسب الحاجة -->
         </div>
     </div>
     <div class="social-bar">
